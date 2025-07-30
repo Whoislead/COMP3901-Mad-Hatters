@@ -1,0 +1,131 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.register {
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  position: relative;
+  background-color: #000dbf; /* Same blue as Home */
+  overflow: hidden;
+  text-align: left;
+  font-size: 20px;
+  color: #a3a3a3;
+  font-family: Inter, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-child {
+  position: absolute;
+  top: 2px;
+  left: 0px;
+  width: 1041px;
+  height: 1115px;
+  mix-blend-mode: multiply;
+  z-index: 0;
+}
+
+.untitled-design-1 {
+  position: absolute;
+  top: 159px;
+  left: 1297px;
+  width: 152px;
+  height: 177px;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.evil-twin-detector {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 64px;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+  font-family: Jost, sans-serif;
+  color: #1e0303;
+  display: inline-block;
+  width: 924px;
+  height: 85px;
+  text-align: center;
+  z-index: 2;
+}
+
+.spyvsspy-1-icon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  height: auto;
+  object-fit: contain;
+  z-index: 1;
+}
+
+.register-form {
+  position: relative;
+  z-index: 2;
+  background: rgba(255,255,255,0.07);
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+  padding: 3rem 2.5rem 2.5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-width: 350px;
+  max-width: 400px;
+}
+
+.register-label {
+  color: #fff;
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-bottom: 0.3em;
+}
+
+.register-input {
+  padding: 0.8em 1em;
+  border-radius: 8px;
+  border: none;
+  font-size: 1em;
+  margin-bottom: 0.5em;
+  background: #f7f7f7;
+  color: #222;
+  font-family: inherit;
+  outline: none;
+  transition: box-shadow 0.2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.register-input:focus {
+  box-shadow: 0 0 0 2px #0057ff;
+}
+
+.create-btn {
+  margin-top: 1.2em;
+  background: #fff;
+  color: #000dbf;
+  border: none;
+  border-radius: 8px;
+  padding: 1em 0;
+  font-size: 1.2em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.1s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.create-btn:hover,
+.create-btn:focus {
+  background: #e6e6e6;
+  color: #003bbf;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+

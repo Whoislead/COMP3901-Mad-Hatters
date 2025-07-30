@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+}
+
+.login {
+  background-color: #000dbf;
+  color: #393dff;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.background-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  opacity: 0.4;
+  z-index: 0;
+  object-fit: cover;
+}
+
+.login-content {
+  z-index: 1;
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  height: 120px;
+  width: auto;
+  object-fit: contain;
+}
+
+.title {
+  font-family: 'Jost', sans-serif;
+  font-size: 32px;
+  color: #1e0303;
+  text-align: center;
+  margin-top: 12px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: #a3a3a3;
+  font-size: 16px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid #000;
+  padding: 8px 0;
+}
+
+.input-group input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding-left: 10px;
+  font-size: 16px;
+  background-color: transparent;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.forget-password {
+  text-align: right;
+  font-weight: 500;
+  font-size: 14px;
+  color: #000;
+  cursor: pointer;
+}
+
+.login-button, .register-button {
+  background-color: #000;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.register-button {
+  margin-top: 10px;
+  background-color: #222;
+}
+
+.spy-img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 200px;
+  object-fit: contain;
+  z-index: 0;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="initial-scale=1, width=device-width">
+  	
+  	<link rel="stylesheet"  href="./Account.css" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" />
+  	
+  	
+  	
+</head>
+<body>
+  	
+  	<div class="account">
+    		<img class="clip-path-group" alt="" src="Clip path group.svg">
+    		
+    		<img class="profile-1-icon" alt="" src="profile 1.png">
+    		
+    		<div class="email-address">Email address</div>
+    		<div class="account-child">
+    		</div>
+    		<div class="account-item">
+    		</div>
+    		<img class="account-inner" alt="" src="Rectangle 14.svg">
+    		
+    		<div class="rectangle" data-scroll-to="rectangle">
+    		</div>
+    		<div class="toggle-left">
+      			<img class="icon" alt="" src="Icon.svg">
+      			
+    		</div>
+    		<div class="wifi-is-safe">WiFi is safe </div>
+    		<div class="notifications">Notifications</div>
+    		<div class="rectangle-div">
+    		</div>
+    		<div class="activity-history">Activity History </div>
+    		<div class="suspicious-network-detected">Suspicious network detected</div>
+    		<div class="ssl-certificate-mismatch">SSL certificate mismatch detected  </div>
+    		<div class="duplicate-ssid-found">Duplicate SSID found </div>
+    		<div class="toggle-left1">
+      			<img class="icon" alt="" src="Icon.svg">
+      			
+    		</div>
+    		<div class="toggle-left2" id="toggleLeftContainer2">
+      			<img class="icon" alt="" src="Icon.svg">
+      			
+    		</div>
+    		<div class="account-child1">
+    		</div>
+    		<img class="vector-icon" alt="" src="Vector.svg">
+    		
+    		<div class="date-time">Date & Time</div>
+    		<div class="activity">Activity</div>
+  	</div>
+  	
+  	
+  	
+  	
+  	<script>
+    		var toggleLeftContainer2 = document.getElementById("toggleLeftContainer2");
+    		if(toggleLeftContainer2) {
+      			toggleLeftContainer2.addEventListener("click", function () {
+        				var anchor = document.querySelector("[data-scroll-to='rectangle']");
+        				if(anchor) {
+          					anchor.scrollIntoView({"block":"start","behavior":"smooth"})
+        				}
+      			});
+    		}
+  	</script></body>
+</html>

@@ -1,0 +1,195 @@
+.clip-path-group {
+  	position: absolute;
+  	height: 100%;
+  	width: 100%;
+  	top: 0%;
+  	right: 0%;
+  	bottom: 0%;
+  	left: 0%;
+  	max-width: 100%;
+  	overflow: hidden;
+  	max-height: 100%;
+}
+.profile-1-icon {
+  	position: absolute;
+  	width: 21.57%;
+  	top: 0px;
+  	right: 78.43%;
+  	left: 0%;
+  	border-radius: 0px 3px 3px 0px;
+  	max-width: 100%;
+  	overflow: hidden;
+  	height: 360px;
+  	object-fit: cover;
+}
+.email-address {
+  	position: absolute;
+  	top: 209px;
+  	left: 437px;
+  	font-size: 32px;
+  	font-weight: 500;
+}
+.account-child {
+  	position: absolute;
+  	top: 527px;
+  	left: 0px;
+  	background-color: #d9d9d9;
+  	width: 778px;
+  	height: 590px;
+}
+.account-item {
+  	position: absolute;
+  	top: 527px;
+  	left: 802.28px;
+  	background-color: #d9d9d9;
+  	width: 866px;
+  	height: 590px;
+  	transform:  rotate(-0.1deg);
+  	transform-origin: 0 0;
+}
+.account-inner {
+  	position: absolute;
+  	top: 527px;
+  	left: 1065px;
+  	width: 311px;
+  	height: 100px;
+}
+.rectangle {
+  	position: absolute;
+  	top: 634px;
+  	left: 813px;
+  	background-color: #000dbf;
+  	width: 855px;
+  	height: 474px;
+}
+.icon {
+  	position: absolute;
+  	height: 58.39%;
+  	width: 91.69%;
+  	top: 20.83%;
+  	right: 4.14%;
+  	bottom: 20.78%;
+  	left: 4.17%;
+  	max-width: 100%;
+  	overflow: hidden;
+  	max-height: 100%;
+}
+.toggle-left {
+  	position: absolute;
+  	top: 852px;
+  	left: 1538px;
+  	width: 118px;
+  	height: 62px;
+  	overflow: hidden;
+}
+.wifi-is-safe {
+  	position: absolute;
+  	top: 861px;
+  	left: 818px;
+  	font-weight: 500;
+  	display: inline-block;
+  	width: 300px;
+  	height: 43px;
+}
+.notifications {
+  	position: absolute;
+  	top: 559px;
+  	left: 1095px;
+  	font-weight: 500;
+  	color: #fff;
+}
+.rectangle-div {
+  	position: absolute;
+  	top: 527px;
+  	left: 192px;
+  	background-color: #000dbf;
+  	width: 335px;
+  	height: 75px;
+}
+.activity-history {
+  	position: absolute;
+  	top: 537px;
+  	left: 212px;
+  	font-weight: 500;
+  	color: #fff;
+}
+.suspicious-network-detected {
+  	position: absolute;
+  	top: 774px;
+  	left: 818px;
+  	font-weight: 500;
+}
+.ssl-certificate-mismatch {
+  	position: absolute;
+  	top: 1060px;
+  	left: 812px;
+  	font-weight: 500;
+  	white-space: pre-wrap;
+}
+.duplicate-ssid-found {
+  	position: absolute;
+  	top: 958px;
+  	left: 813px;
+  	font-weight: 500;
+}
+.toggle-left1 {
+  	position: absolute;
+  	top: 774px;
+  	left: 1533px;
+  	width: 118px;
+  	height: 62px;
+  	overflow: hidden;
+}
+.toggle-left2 {
+  	position: absolute;
+  	top: 944px;
+  	left: 1538px;
+  	width: 118px;
+  	height: 62px;
+  	overflow: hidden;
+  	cursor: pointer;
+}
+.account-child1 {
+  	position: absolute;
+  	top: 634px;
+  	left: 0px;
+  	background-color: #000dbf;
+  	width: 778px;
+  	height: 474px;
+}
+.vector-icon {
+  	position: absolute;
+  	height: 8.24%;
+  	width: 46.61%;
+  	top: 56.76%;
+  	right: 53.39%;
+  	bottom: 35%;
+  	left: 0%;
+  	max-width: 100%;
+  	overflow: hidden;
+  	max-height: 100%;
+}
+.date-time {
+  	position: absolute;
+  	top: 656px;
+  	left: 469px;
+  	font-weight: 500;
+}
+.activity {
+  	position: absolute;
+  	top: 656px;
+  	left: 34px;
+  	font-weight: 500;
+}
+.account {
+  	width: 100%;
+  	position: relative;
+  	background-color: #000dbf;
+  	height: 1117px;
+  	overflow: hidden;
+  	text-align: left;
+  	font-size: 40px;
+  	color: #000;
+  	font-family: Inter;
+}
+
