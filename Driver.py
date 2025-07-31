@@ -69,8 +69,57 @@ def open_about():
     # Close button
     close_btn = tk.Button(about_win, text="Close", font=("Helvetica", 14), bg="#000000", fg="white", borderwidth=0, command=about_win.destroy)
     close_btn.pack(pady=20)
+def open_scan_window():
+    scan_win = tk.Toplevel(root)
+    scan_win.title("Scan")
+    scan_win.geometry("600x400")
+    scan_win.configure(bg="white")  # White background
 
-# Bind the About button
+    # Create a frame at the top for buttons
+    button_frame = tk.Frame(scan_win, bg="white")
+    button_frame.pack(pady=20)
+
+    # Common style for both buttons
+    scan_button_style = {
+        "font": ("Helvetica", 14),
+        "bg": "#00008B",    # Deep blue
+        "fg": "white",
+        "borderwidth": 0,
+        "width": 20,
+        "padx": 10,
+        "pady": 5
+    }
+
+    # "Check secure connection" button
+    check_button = tk.Button(button_frame, text="Check secure connection", **scan_button_style)
+    check_button.pack(side="left", padx=10)
+
+    # "Scan nearby networks" button
+    scan_button = tk.Button(button_frame, text="Scan nearby networks", **scan_button_style)
+    scan_button.pack(side="left", padx=10)
+
+    # Grey band (header row)
+    header_frame = tk.Frame(scan_win, bg="#D3D3D3", height=40)
+    header_frame.pack(fill="x", padx=20, pady=(10, 0))
+
+    # Column labels
+    label_style = {
+        "font": ("Helvetica", 12, "bold"),
+        "bg": "#D3D3D3",
+        "fg": "black"
+    }
+
+    network_name_label = tk.Label(header_frame, text="Network Name", **label_style, anchor="w")
+    network_name_label.pack(side="left", fill="x", expand=True)
+
+    network_info_label = tk.Label(header_frame, text="Network Info", **label_style, anchor="center")
+    network_info_label.pack(side="left", fill="x", expand=True)
+
+    risk_level_label = tk.Label(header_frame, text="Risk Level", **label_style, anchor="e")
+    risk_level_label.pack(side="left", fill="x", expand=True)
+
+# Bind the buttons
 about_btn.config(command=open_about)
+scan_btn.config(command=open_scan_window)
 
 root.mainloop()
