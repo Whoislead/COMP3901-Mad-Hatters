@@ -1,6 +1,8 @@
 import tkinter as tk
 from tkinter import Canvas, PhotoImage
 from PIL import Image, ImageTk
+from tkinter import messagebox
+import subprocess
 
 root = tk.Tk()
 root.title("Evil Twin Detector")
@@ -69,6 +71,7 @@ def open_about():
     # Close button
     close_btn = tk.Button(about_win, text="Close", font=("Helvetica", 14), bg="#000000", fg="white", borderwidth=0, command=about_win.destroy)
     close_btn.pack(pady=20)
+
 def open_scan_window():
     scan_win = tk.Toplevel(root)
     scan_win.title("Scan")
@@ -90,8 +93,17 @@ def open_scan_window():
         "pady": 5
     }
 
+    def handle_check_secure():
+        # beacon_frame_analysis()
+        result = tk.messagebox.askyesno("Scan for Harmful Sites", "Would you like to start scanning for harmful websites?")
+        if result:
+            try:
+                subprocess.Popen(["python", "SSL_Cert_Driver.py"])
+            except Exception as e:
+                tk.messagebox.showerror("Error", f"Could not start SSL Certificate scan:\n{e}")
+
     # "Check secure connection" button
-    check_button = tk.Button(button_frame, text="Check secure connection", **scan_button_style)
+    check_button = tk.Button(button_frame, text="Check secure connection", command=handle_check_secure, **scan_button_style)
     check_button.pack(side="left", padx=10)
 
     # "Scan nearby networks" button
