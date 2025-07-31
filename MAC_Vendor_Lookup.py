@@ -12,11 +12,10 @@ HEADERS = {
 
 def lookup_macvendors_api(mac):
     try:
-        oui = ":".join(mac.split(":")[:3]).upper()
-        resp = requests.get(f"https://api.macvendors.com/{oui}", timeout=5)
+        resp = requests.get(f"https://api.macvendors.com/{mac}", timeout=7)
         if resp.status_code == 200 and "errors" not in resp.text.lower():
             return resp.text.strip()
-    except:
+    except Exception:
         pass
     return None
 
@@ -24,12 +23,12 @@ def lookup_macaddressio(mac):
     try:
         oui = mac.upper().replace(":", "-")
         url = f"https://macaddress.io/mac-address-lookup/{oui}"
-        resp = requests.get(url, headers=HEADERS, timeout=6)
+        resp = requests.get(url, headers=HEADERS, timeout=7)
         if resp.status_code == 200:
-            match = re.search(r"Vendor:\s*</span>\s*(.*?)\s*</div>", resp.text, re.IGNORECASE)
+            match = re.search(r"Company Name</th>\s*<td>(.*?)</td>", resp.text, re.IGNORECASE | re.DOTALL)
             if match:
                 return match.group(1).strip()
-    except:
+    except Exception:
         pass
     return None
 
@@ -45,17 +44,26 @@ def lookup_wireshark(mac):
                 lines = pre.text.strip().split("\n")
                 for line in lines:
                     if oui in line:
-                        return line.split(oui)[-1].strip()
-    except:
+                        return line.split(oui)[-1].strip(" \t-")
+    except Exception:
+        pass
+    return None
+
+def lookup_maclookup_app(mac):
+    try:
+        api_key = "01k1gmjj9m9vjpatcbwx7zysqz01k1gmqn38q7fgwcwbjymd5rctuwgclm6iyywj"  
+        headers = {"Authorization": f"Bearer {api_key}"}
+        resp = requests.get(f"https://api.maclookup.app/v2/macs/{mac}", headers=headers, timeout=7)
+        if resp.status_code == 200:
+            data = resp.json()
+            return data.get("company")
+    except Exception:
         pass
     return None
 
 def lookup_vendor(mac):
-    """
-    Checks 3 sources for MAC vendor lookup.
-    Returns the first successful match or 'Unknown Vendor'.
-    """
     methods = [
+        lookup_maclookup_app,
         lookup_macvendors_api,
         lookup_macaddressio,
         lookup_wireshark,
@@ -67,5 +75,6 @@ def lookup_vendor(mac):
     return "Unknown Vendor"
 
 if __name__ == "__main__":
-    test_mac = input("Enter MAC address (BSSID): ")
-    print("Vendor:", lookup_vendor(test_mac))
+    mac = input("Enter MAC address (BSSID): ").strip()
+    print("Vendor:", lookup_vendor(mac))
+mac))
