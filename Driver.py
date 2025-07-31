@@ -110,7 +110,7 @@ def open_scan_window():
     scan_button = tk.Button(button_frame, text="Scan nearby networks", **scan_button_style)
     scan_button.pack(side="left", padx=10)
 
-    # Grey band (header row)
+    # Header row
     header_frame = tk.Frame(scan_win, bg="#D3D3D3", height=40)
     header_frame.pack(fill="x", padx=20, pady=(10, 0))
 
