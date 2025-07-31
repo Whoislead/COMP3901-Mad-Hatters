@@ -52,7 +52,7 @@ def validate_certificate(hostname):
     print(f"\n{hostname} is SAFE.")
     return True
 
-def get_latest_sni(tshark_path="tshark", interface="Wi-Fi", timeout=5):
+def get_latest_sni(tshark_path="tshark", interface="Wi-Fi", timeout=3):
     print(f"\nSniffing for {timeout} seconds on interface '{interface}'...")
     try:
         result = subprocess.run(
@@ -82,7 +82,7 @@ def get_latest_sni(tshark_path="tshark", interface="Wi-Fi", timeout=5):
 
 def get_redirect_chain(start_url):
     try:
-        response = requests.get(start_url, allow_redirects=True, timeout=10)
+        response = requests.get(start_url, allow_redirects=True, timeout=3)
 
         if not response.history:
             return []
@@ -108,7 +108,7 @@ def is_useful_domain(domain):
     return domain and domain.lower() not in EXCLUDE_DOMAINS
 
 def ssl_scan(auto=True, domain_override=None):
-    domain = domain_override or get_latest_sni(interface="Wi-Fi", timeout=5)
+    domain = domain_override or get_latest_sni(interface="Wi-Fi", timeout=3)
 
     if domain and is_useful_domain(domain):
         url = f"https://{domain}"
@@ -138,7 +138,7 @@ def ssl_scan(auto=True, domain_override=None):
             "details": "No useful domain detected."
         }
 
-def auto_scan_step(scanned_domains, tshark_path="tshark", interface="Wi-Fi", timeout=5):
+def auto_scan_step(scanned_domains, tshark_path="tshark", interface="Wi-Fi", timeout=3):
     """
     Single step for auto scanning.
     Returns scan result dict for a new domain not scanned yet, or None if no new domain.
