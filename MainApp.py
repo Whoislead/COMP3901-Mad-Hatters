@@ -8,10 +8,10 @@ def main():
     print("Welcome to the Evil Twin Checker App!")
     print("Please select an option to proceed:")
 
-    print("1. To scan Networks for Beacon Frames")
-    print("2. To Check SSL Certificates")
-    print("3. To Query Wigle API for possible locations")
-    print("4. To Query Shodan API")
+    print("1. Scan Networks for Beacon Frames")
+    print("2. Run SSL Certificate + Redirect Check")
+    print("3. Query Wigle API for possible locations")
+    print("4. Query Shodan API")
     
     choice = input("Select an option (1-4): ")
     
@@ -19,8 +19,15 @@ def main():
         interface = input("Enter network interface for beacon analysis: ")
         Beacon_frame_analyzer.start_sniffing(interface)
     elif choice == '2':
-        domain = input("Enter domain to check SSL certificate: ")
-        SSL_Cert_Check.check_ssl_cert(domain)
+        mode = input("Auto detect domain from traffic? (y/n): ").strip().lower()
+        if mode == 'y':
+            result = SSL_Cert_Check.ssl_scan(auto=True)
+        else:
+            domain = input("Enter domain to scan (e.g. google.com): ").strip()
+            result = SSL_Cert_Check.ssl_scan(auto=False, domain_override=domain)
+        print(f"\nScan Status: {result['status'].upper()}")
+        print("Details:")
+        print(result["details"])
     elif choice == '3':
         WigleAPI.query_wigle_api()
     elif choice == '4':
