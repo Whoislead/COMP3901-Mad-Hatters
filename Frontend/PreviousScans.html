@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, width=device-width">
+  <link rel="stylesheet" href="./PreviousScans.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" />
+  <title>Previous Scans</title>
+</head>
+<body>
+  <div class="scan">
+    <img class="clip-path-group" alt="" src="./assets/Clip path group.svg" />
+    <img class="untitled-design-1" alt="" src="./images/Untitled design 1.png">
+    <img class="spy-img" alt="Spy Art" src="./images/spyvsspy 1.png" />
+
+    <h1 class="network-info">Previous Scans</h1>
+
+    <div class="filter-section">
+      <label for="filter-column" class="filter-label">Filter by:</label>
+      <select id="filter-column" class="filter-dropdown">
+        <option value="SSID">SSID</option>
+        <option value="BSSID">BSSID</option>
+        <option value="CHANNEL">CHANNEL</option>
+        <option value="CHANNEL FREQUENCY">CHANNEL FREQUENCY</option>
+        <option value="DOMAIN CERTIFICATE">DOMAIN CERTIFICATE</option>
+        <option value="MAC VENDOR">MAC VENDOR</option>
+        <option value="TAG SPECIFIC VENDOR">TAG SPECIFIC VENDOR</option>
+        <option value="LOCATION">LOCATION</option>
+        <option value="THREAT LEVEL">THREAT LEVEL</option>
+      </select>
+      <input type="text" id="filter-input" class="filter-input" placeholder="Enter filter value..." />
+      <button class="scan-btn" id="filter-btn">Filter</button>
+    </div>
+
+    <div class="network-table-container">
+      <table class="network-table">
+        <thead>
+          <tr>
+            <th>SSID</th>
+            <th>BSSID</th>
+            <th>CHANNEL</th>
+            <th>CHANNEL FREQUENCY</th>
+            <th>DOMAIN CERTIFICATE</th>
+            <th>MAC VENDOR</th>
+            <th>TAG SPECIFIC VENDOR</th>
+            <th>LOCATION</th>
+            <th>THREAT LEVEL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Table rows will be dynamically inserted here -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Example nav for all pages -->
+    <nav class="nav-bar scan-nav bottom-nav">
+      <button class="nav-btn scan-nav-btn" onclick="window.location.href='Home.html'">Home</button>
+      <button class="nav-btn scan-nav-btn" onclick="window.location.href='Account.html'">Account</button>
+      <button class="nav-btn scan-nav-btn" onclick="window.location.href='Scan.html'">Scan</button>
+      <button class="nav-btn scan-nav-btn" onclick="window.location.href='PreviousScans.html'">Previous Scans</button>
+      <button class="nav-btn scan-nav-btn" onclick="window.location.href='About.html'">About</button>
+    </nav>
+  </div>
+  <script>
+    // Simple filter logic for demonstration (replace with real data logic as needed)
+    document.getElementById('filter-btn').onclick = function() {
+      const col = document.getElementById('filter-column').value;
+      const val = document.getElementById('filter-input').value.toLowerCase();
+      const table = document.querySelector('.network-table tbody');
+      for (const row of table.rows) {
+        let idx = Array.from(row.parentNode.parentNode.rows[0].cells).findIndex(th => th.textContent === col);
+        if (idx === -1) idx = 0;
+        const cell = row.cells[idx];
+        if (cell && cell.textContent.toLowerCase().includes(val)) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      }
+    };
+  </script>
+</body>
+</html>
