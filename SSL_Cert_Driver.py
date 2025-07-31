@@ -57,7 +57,7 @@ class EvilTwinScannerApp(tk.Tk):
             result = SSL_Cert_Check.auto_scan_step(self.scanned_domains)
             if result:
                 self.result_label.after(0, lambda r=result: self.update_result_display(r))
-            time.sleep(1)
+            time.sleep(3)
 
     def update_result_display(self, result):
         color = "#4CAF50" if result["status"] == "safe" else "#f44336"
